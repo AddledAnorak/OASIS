@@ -538,13 +538,13 @@ class OfflineEnv(gymn.Env):
     
 
 
-class OfflineEnvWrapper(gym.Wrapper, OfflineEnv):
+class OfflineEnvWrapper(gymn.Wrapper, OfflineEnv):
     """
     Wrapper class for offline RL envs.
     """
 
     def __init__(self, env):
-        gym.Wrapper.__init__(self, env)
+        gymn.Wrapper.__init__(self, env)
         self.noise_scale = None
 
     def reset(self):
@@ -563,7 +563,7 @@ class OfflineEnvWrapper(gym.Wrapper, OfflineEnv):
         return obs_next, reward, terminated, truncated, info
     
     
-class NormalizationEnvWrapper(gym.Wrapper, OfflineEnv):
+class NormalizationEnvWrapper(gymn.Wrapper, OfflineEnv):
     """
     Wrapper class for offline RL envs.
     """
@@ -574,7 +574,7 @@ class NormalizationEnvWrapper(gym.Wrapper, OfflineEnv):
                  action_mean = None,
                  action_std = None, 
                  is_cost_separate = False):
-        gym.Wrapper.__init__(self, env)
+        gymn.Wrapper.__init__(self, env)
         
         self.noise_scale = None
         self.obs_mean = obs_mean
