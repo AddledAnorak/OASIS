@@ -65,7 +65,6 @@ def train(args: OASISTrainConfig):
     else: 
         import safety_gymnasium as gym
 
-    input(f'Task: {args.task}')
     env = gym.make(args.task)
 
     # pre-process offline dataset
